@@ -1,0 +1,56 @@
+http://www.opengl.org/wiki/Image_Libraries
+http://linuxgazette.net/91/shuveb.html
+
+//write binary
+_setmode( _fileno( stdout ), _O_BINARY ); 
+
+/usr/ports/graphics/gd
+http://www.boutell.com/gd/manual2.0.33.html
+
+... inside a function ...
+gdImagePtr im;
+int black;
+int white;
+/* Points of polygon */
+gdPoint points[3];
+im = gdImageCreate(100, 100);
+/* Background color (first allocated) */
+black = gdImageColorAllocate(im, 0, 0, 0);  
+/* Allocate the color white (red, green and 
+  blue all maximum). */
+  white = gdImageColorAllocate(im, 255, 255, 255);  
+  /* Draw a triangle. */
+  points[0].x = 50;
+  points[0].y = 0;
+  points[1].x = 99;
+  points[1].y = 99;
+  points[2].x = 0;
+  points[2].y = 99;
+  gdImagePolygon(im, points, 3, white);
+  /* ... Do something with the image, such as 
+    saving it to a file... */
+    /* Destroy it */
+    gdImageDestroy(im);
+    
+... inside a function ...
+gdImagePtr im;
+int black, white;
+FILE *out;
+/* Create the image */
+im = gdImageCreate(100, 100);
+/* Allocate background */
+white = gdImageColorAllocate(im, 255, 255, 255);
+/* Allocate drawing color */
+black = gdImageColorAllocate(im, 0, 0, 0);
+/* Draw rectangle */
+gdImageRectangle(im, 0, 0, 99, 99, black);
+/* Open output file in binary mode */
+out = fopen("rect.png", "wb");
+/* Write PNG */
+gdImagePng(im, out);
+/* Close file */
+fclose(out);
+/* Destroy image */
+gdImageDestroy(im);
+
+

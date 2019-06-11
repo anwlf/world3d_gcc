@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+body_
+{
+    background:url("/images/night_sky_large.jpg");
+    background-size:cover;
+    background-repeat:repeat;
+    box-align:center;
+}
+div
+{
+    margin:auto;
+}
+img
+{
+    position:absolute;
+    width:70%;
+    left:15%;
+    right:15%;
+}
+</style>
+<script type="text/javascript">
+function refresh()
+{
+    var d = new Date();
+    var m = Math.floor(d.getMilliseconds()/10);
+    var pic_ = "./rect.png";
+		
+    document.images["pic"].src=pic_ + "?time=" + d + "&mils=" +m;
+}
+//if (document.images)  window.onload = refresh;
+</script>
+</head> 
+<body onload="refresh();">
+World3D
+<div>
+<!img src="/images/night_sky_large.jpg" style="{z-index:-1;}"></img>
+<img src="/images/pic3.jpg" style="{z-index:-1;}"></img>
+<img src="./rect.png" id="pic" style="{z-index:1;} "onload="refresh();" onerror="refresh();"></img>
+</div>
+</body>
+</html>

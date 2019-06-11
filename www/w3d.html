@@ -1,0 +1,27 @@
+<html>
+<head>
+<style> 
+div
+{
+background:url("/images/night_sky_large.jpg");
+background-size:cover;
+background-repeat:no-repeat;
+}
+</style>
+
+<script type="text/javascript">
+function refresh()
+{
+    document.images["pic"].src="./rect.png?time=" + new Date();
+    setTimeout('refresh()', 100);	
+}
+//if (document.images)  window.onload = refresh;
+</script>
+</head> 
+<body onload="refresh();">
+World3D
+<div>
+<img width="80%" src="image.jpg" id="pic" onclick="refresh();"></img>
+</div>
+</body>
+</html>
