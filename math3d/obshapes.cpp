@@ -63,7 +63,7 @@ contour::contour(int v_c, ...) {
 }
 
 int* contour::projection(point_projection* v_p) {
-    point_projection *v_projections = new(point_projection[vertexs_count]);
+    point_projection *v_projections = new point_projection[vertexs_count];
     for (int i=0; i<vertexs_count; i++) {
 	v_projections[i][0] = v_p[vertexs_nums[i]][0];
 	v_projections[i][1] = v_p[vertexs_nums[i]][1];

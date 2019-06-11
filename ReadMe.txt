@@ -12,6 +12,8 @@ cd ./libgd
 
 ## my code
 
+## possible needs adjust Makefile LIB  INCLUDE
+
 cd ..
 cd ./world3d
 ./configure

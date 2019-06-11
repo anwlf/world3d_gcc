@@ -20,8 +20,8 @@
 CC=g++
 # CFLAGS=-L. -lftd2xx -Wl,-rpath /usr/local/lib
 CFLAGS=-g
-LFLAGS=-L. 
-## -lm
+LFLAGS=-L.
+##-lm
 
 ##INCLUDE=/usr/local/include
 ##LIB=/usr/local/lib
@@ -32,7 +32,7 @@ exec_prefix=${prefix}
 INCLUDE=${prefix}/include
 LIB=${exec_prefix}/lib
 
-#CC=gcc
+##CC=gcc
 
 M3D = math3d
 
