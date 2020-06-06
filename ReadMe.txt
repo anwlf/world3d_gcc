@@ -7,8 +7,8 @@ git clone https://github.com/libgd/libgd.git
 cd ./libgd
 ./bootstrap.sh
 ./configure
-./make
-./sudo make install
+make
+sudo make install
 
 ## my code
 

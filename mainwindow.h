@@ -86,9 +86,11 @@ public:
     }
     char* speed_sprint(char* buf) {
 	sprintf(buf,"S:(%f,%f,%f)",_speed[0],_speed[1],_speed[2]);
+	return buf;
     }
     char* rot_sprint(char* buf) {
 	sprintf(buf,"R:(%f,%f,%f)",_rotation[0],_rotation[1],_rotation[2]);
+	return buf;
     }
 };
 
@@ -130,13 +132,14 @@ public:
 	//	base |= (&Objects[i] == bases[b].Base());
 	    }
 	    if (!base) {
-		fscanf(f,"o(l(%f,%f,%f):r((%f,%f,%f),(%f,%f,%f),(%f,%f,%f)))\n",
+		return fscanf(f,"o(l(%f,%f,%f):r((%f,%f,%f),(%f,%f,%f),(%f,%f,%f)))\n",
 		    &loc(Objects[i])[0],&loc(Objects[i])[1],&loc(Objects[i])[2],
 		    &orts(Objects[i])[0][0],&orts(Objects[i])[0][1],&orts(Objects[i])[0][2],
 		    &orts(Objects[i])[1][0],&orts(Objects[i])[1][1],&orts(Objects[i])[1][2],
 		    &orts(Objects[i])[2][0],&orts(Objects[i])[2][1],&orts(Objects[i])[2][2]);
 	    }
 	}
+	return 0;
     }
 //signals:
     // "world_thread" has finished calculations  and emits signal
